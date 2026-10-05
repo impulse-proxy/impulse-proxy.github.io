@@ -3,20 +3,7 @@ import { BrandMark } from "@/components/brand-mark";
 import { SectionLabel } from "@/components/section-label";
 import { siteConfig } from "@/lib/site-config";
 import {
-  ArrowRight,
-  BookOpen,
-  BracketsCurly,
-  Check,
-  Gauge,
-  GearSix,
-  GithubLogo,
-  Globe,
-  Graph,
-  LockKey,
-  Path,
-  Pulse,
-  ShieldCheck,
-  Stack,
+  ArrowRight, BookOpen, BracketsCurly, Check, Gauge, GearSix, GithubLogo, Globe, Graph, LockKey, Path, Pulse, ShieldCheck, Stack
 } from "@phosphor-icons/react/ssr";
 
 const capabilities = [
