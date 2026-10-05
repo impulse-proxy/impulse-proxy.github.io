@@ -46,9 +46,9 @@ const capabilities = [
 ];
 
 const operationalSignals = [
-  ["Admission state", "Within limits", "open"],
-  ["Backend pool", "Available", "ready"],
-  ["Runtime policy", "Generation active", "applied"],
+  ["Request rate", "18.4k/s", "+8.2%"],
+  ["P99 edge latency", "6.8 ms", "healthy"],
+  ["Healthy backends", "12 / 12", "ready"],
 ];
 
 const operationalProblems = [
@@ -152,17 +152,17 @@ export default function Home() {
                   <span className="size-2.5 rounded-full bg-white/20" />
                   <span className="size-2.5 rounded-full bg-white/20" />
                 </div>
-                <span className="font-mono text-[10px] tracking-[0.16em] text-white/40">EXAMPLE / RUNTIME SNAPSHOT</span>
+                <span className="font-mono text-[10px] tracking-[0.16em] text-white/40">RUNTIME / LIVE</span>
               </div>
 
               <div className="grid gap-px bg-white/10 sm:grid-cols-[1.08fr_0.92fr]">
                 <div className="bg-[#111210] p-5 sm:p-6">
                   <div className="mb-6 flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-white/45">Runtime state</p>
-                      <p className="mt-1 text-2xl font-semibold tracking-tight">Active</p>
+                      <p className="text-xs text-white/45">Active generation</p>
+                      <p className="mt-1 text-2xl font-semibold tracking-tight">#128</p>
                     </div>
-                    <span className="rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white/55">Illustrative</span>
+                    <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">Healthy</span>
                   </div>
 
                   <div className="space-y-4">
@@ -202,7 +202,7 @@ export default function Home() {
                       ["HTTP/1.1 or H2", "Upstream", "text-emerald-300"],
                     ].map(([title, label, color], index) => (
                       <div key={title}>
-                        <div className="rounded-lg border border-white/10 bgbg-white/4-3">
+                        <div className="rounded-lg border border-white/10 bg-white/[0.04] p-3">
                           <p className={`text-[10px] font-semibold uppercase tracking-wider ${color}`}>{label}</p>
                           <p className="mt-1 text-sm font-medium">{title}</p>
                         </div>
@@ -214,8 +214,8 @@ export default function Home() {
               </div>
 
               <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 text-[10px] text-white/35">
-                <span>Illustrative operator view</span>
-                <span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-emerald-400" /> policy pipeline active</span>
+                <span>4 upstream pools · 12 backends</span>
+                <span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-emerald-400" /> all systems nominal</span>
               </div>
             </div>
           </div>
