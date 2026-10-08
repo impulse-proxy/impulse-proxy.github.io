@@ -5,8 +5,7 @@ export const siteConfig = {
   release: "v0.6 beta",
   links: {
     docs: "https://impulse-proxy.github.io/docs/",
-    quickstart: "https://impulse-proxy.github.io/docs/tutorials/quickstart",
-    overview: "https://impulse-proxy.github.io/docs/getting-started/overview",
+    quickstart: "https://impulse-proxy.github.io/docs/getting-started/quickstart",
     github: "https://github.com/impulse-proxy/impulse",
   },
 } as const;
