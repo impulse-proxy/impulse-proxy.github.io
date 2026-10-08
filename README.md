@@ -102,27 +102,6 @@ Use these rules when product information changes:
    local or placeholder values rather than production-looking credentials,
    addresses, or telemetry.
 
-## Deployment
-
-The application metadata, sitemap, crawler policy, and documentation navigation
-all treat <https://impulse-proxy.github.io/> as the production website. The docs
-repository independently publishes the `/docs/` path.
-
-This repository does not currently contain a provider-specific deployment
-workflow. Publishing automation must preserve the canonical root URL and the
-separate `/docs/` ownership boundary. Do not assume Vercel deployment or add a
-provider-specific instruction here unless that workflow is committed to the
-repository.
-
-Before publishing a website change:
-
-- run the lint and production-build checks;
-- inspect internal and external links;
-- confirm the generated canonical, Open Graph, Twitter, sitemap, and robots
-  URLs use the production origin;
-- review technical claims against the current documentation and runtime; and
-- check keyboard navigation, focus visibility, contrast, and responsive layout.
-
 ## Project Status and License
 
 Impulse is beta software intended for controlled production rollouts. Review
