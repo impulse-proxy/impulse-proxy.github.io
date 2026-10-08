@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
+import { NewTabIndicator } from "@/components/new-tab-indicator";
 import { SectionLabel } from "@/components/section-label";
 import { siteConfig } from "@/lib/site-config";
 import {
-  ArrowRight, BookOpen, BracketsCurly, Check, Gauge, GearSix, GithubLogo, Globe, Graph, LockKey, Path, Pulse, ShieldCheck, Stack
+  BookOpen, BracketsCurly, Check, Gauge, GearSix, GithubLogo, Globe, Graph, LockKey, Path, Pulse, ShieldCheck, Stack
 } from "@phosphor-icons/react/ssr";
 
 const capabilities = [
@@ -35,13 +36,13 @@ const capabilities = [
     icon: LockKey,
     title: "Explicit trust boundaries",
     description:
-      "Secure upstreams with mTLS, protect API traffic with JWT or API keys, and operate through role-aware administration.",
+      "Secure upstreams with mutual TLS (mTLS), protect requests with JSON Web Tokens (JWTs) or API keys, and operate through role-aware administration.",
   },
   {
     icon: Pulse,
     title: "Operator-grade signals",
     description:
-      "Correlate Prometheus metrics, structured logs, OTLP traces, audit events, and live runtime snapshots.",
+      "Correlate Prometheus metrics, structured logs, OpenTelemetry Protocol (OTLP) traces, audit events, and live runtime snapshots.",
   },
 ];
 
@@ -60,7 +61,7 @@ const operationalProblems = [
   {
     title: "Unclear policy outcomes",
     description:
-      "When auth, quota, admission, and routing blur together, rejected requests become difficult to explain.",
+      "When authentication, quota, admission, and routing blur together, rejected requests become difficult to explain.",
   },
   {
     title: "Unsafe traffic changes",
@@ -119,6 +120,7 @@ export default function Home() {
                 className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
               >
                 Review status, general-availability blockers, and limitations
+                <NewTabIndicator />
               </Link>
               .
             </p>
@@ -132,7 +134,7 @@ export default function Home() {
               >
                 <BookOpen aria-hidden="true" className="size-4" />
                 Read the quickstart
-                <ArrowRight aria-hidden="true" className="size-4" />
+                <NewTabIndicator />
               </Link>
               <Link
                 href={siteConfig.links.github}
@@ -142,6 +144,7 @@ export default function Home() {
               >
                 <GithubLogo aria-hidden="true" className="size-4" weight="fill" />
                 View on GitHub
+                <NewTabIndicator />
               </Link>
             </div>
 
@@ -210,8 +213,8 @@ export default function Home() {
                     {[
                       ["HTTP/3 + QUIC", "Ingress", "text-sky-300"],
                       ["Route + Select", "Decision", "text-amber-300"],
-                      ["Auth + Admission", "Policy", "text-violet-300"],
-                      ["HTTP/1.1 or H2", "Upstream", "text-emerald-300"],
+                      ["Authentication + Admission", "Policy", "text-violet-300"],
+                      ["HTTP/1.1 or HTTP/2", "Upstream", "text-emerald-300"],
                     ].map(([title, label, color], index) => (
                       <div key={title}>
                         <div className="rounded-lg border border-white/10 bg-white/[0.04] p-3">
@@ -349,8 +352,8 @@ export default function Home() {
                       ["02", "Route", "resolve upstream"],
                       ["03", "Select", "choose backend"],
                       ["04", "Pre-auth", "brownout + rate limits"],
-                      ["05", "Local auth", "API key + JWT"],
-                      ["06", "External auth", "provider decision"],
+                      ["05", "Local authentication", "API key + JWT"],
+                      ["06", "External authorization", "provider decision"],
                       ["07", "Post-auth", "quota + protection"],
                       ["08", "Dispatch", "bridge + transport"],
                     ].map(([step, title, detail]) => (
@@ -399,7 +402,7 @@ export default function Home() {
                 <div className="rounded-xl border border-border bg-card p-4">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Backend lifecycle</p>
                   <p className="mt-2 text-sm font-semibold">Resolution, health, membership</p>
-                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">DNS refresh · active checks · passive feedback · client rotation</p>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Domain Name System (DNS) refresh · active checks · passive feedback · client rotation</p>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-4">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Operator surfaces</p>
@@ -455,7 +458,7 @@ export default function Home() {
                 <Stack aria-hidden="true" className="size-5" />
                 <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">An observability bundle</h3>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  Start with shipped dashboards, recording rules, alerts, and SLO definitions aligned to the runtime vocabulary.
+                  Start with shipped dashboards, recording rules, alerts, and service-level objective (SLO) definitions aligned to the runtime vocabulary.
                 </p>
                 <div className="mt-6 flex items-center gap-3 text-xs text-muted-foreground">
                   <span>Prometheus</span><span className="size-1 rounded-full bg-muted-foreground/40" />
@@ -486,7 +489,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Read the quickstart <ArrowRight aria-hidden="true" className="size-4" />
+              Read the quickstart <NewTabIndicator />
             </Link>
             <Link
               href={siteConfig.links.github}
@@ -495,6 +498,7 @@ export default function Home() {
               className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-white/15 px-5 text-sm font-semibold transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <GithubLogo aria-hidden="true" className="size-4" weight="fill" /> View source
+              <NewTabIndicator />
             </Link>
           </div>
         </div>

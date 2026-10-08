@@ -2,6 +2,7 @@ import { GithubLogo } from "@phosphor-icons/react/ssr";
 import Link from "next/link";
 
 import { BrandMark } from "@/components/brand-mark";
+import { NewTabIndicator } from "@/components/new-tab-indicator";
 import { siteConfig } from "@/lib/site-config";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -26,6 +27,7 @@ export function Header() {
             className="rounded-sm text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
           >
             Docs
+            <NewTabIndicator />
           </Link>
           <Link
             href={siteConfig.links.github}
@@ -35,6 +37,7 @@ export function Header() {
           >
             <GithubLogo aria-hidden="true" className="size-4" weight="fill" />
             GitHub
+            <NewTabIndicator />
           </Link>
           <ThemeToggle />
         </nav>

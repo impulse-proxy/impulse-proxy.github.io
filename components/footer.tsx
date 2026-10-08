@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { BrandMark } from "@/components/brand-mark";
+import { NewTabIndicator } from "@/components/new-tab-indicator";
 import { siteConfig } from "@/lib/site-config";
 
 export function Footer() {
@@ -19,6 +20,7 @@ export function Footer() {
             className="rounded-sm hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
           >
             Documentation
+            <NewTabIndicator />
           </Link>
           <Link
             href={siteConfig.links.github}
@@ -27,6 +29,7 @@ export function Footer() {
             className="rounded-sm hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
           >
             GitHub
+            <NewTabIndicator />
           </Link>
         </div>
       </div>
