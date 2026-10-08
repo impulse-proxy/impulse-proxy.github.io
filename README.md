@@ -76,9 +76,6 @@ npm run build
 | --- | --- |
 | `app/page.tsx` | Homepage content and product diagrams |
 | `app/layout.tsx` | Root layout and canonical social metadata |
-| `app/opengraph-image.tsx` | Generated social preview image |
-| `app/robots.ts` | Search-crawler policy |
-| `app/sitemap.ts` | Canonical sitemap entries |
 | `components/` | Shared page components |
 | `lib/site-config.ts` | Canonical website URL, maturity, description, and external links |
 
@@ -87,12 +84,11 @@ npm run build
 Use these rules when product information changes:
 
 1. Update shared URLs, the maturity label, or the canonical product description
-   in `lib/site-config.ts`. This value also feeds page metadata, the sitemap,
-   `robots.txt`, and the social preview.
+   in `lib/site-config.ts`. These values also feed page metadata and homepage copy.
 2. Prefer version-neutral release and installation links. Link to the releases
    page instead of embedding a release number in a URL.
 3. Update a maturity statement only after the canonical Status and Limitations
-   page changes. Keep the homepage qualifier and social preview consistent.
+   page changes. Keep the homepage qualifier and page metadata consistent.
 4. Check every capability claim against the current runtime branch and the
    corresponding documentation reference. State partial-support boundaries or
    link directly to them.
