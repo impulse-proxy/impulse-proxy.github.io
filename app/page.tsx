@@ -110,6 +110,18 @@ export default function Home() {
             <p className="mt-7 max-w-xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl">
               {siteConfig.description}
             </p>
+            <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">
+              {siteConfig.release} is intended for controlled production rollout.{" "}
+              <Link
+                href={siteConfig.links.status}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+              >
+                Review status, general-availability blockers, and limitations
+              </Link>
+              .
+            </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -134,7 +146,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
-              {["No backend rewrite required", "Self-hosted Linux runtime", "Native HTTP/3 over QUIC"].map((item) => (
+              {["HTTP/1.1 and HTTP/2 backends", "Self-hosted Linux runtime", "Native HTTP/3 over QUIC"].map((item) => (
                 <span key={item} className="flex items-center gap-2">
                   <Check aria-hidden="true" className="size-3.5 text-foreground" />
                   {item}
