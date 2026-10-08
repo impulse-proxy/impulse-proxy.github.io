@@ -164,27 +164,27 @@ export default function Home() {
                   <span className="size-2.5 rounded-full bg-white/20" />
                   <span className="size-2.5 rounded-full bg-white/20" />
                 </div>
-                <span className="font-mono text-[10px] tracking-[0.16em] text-white/40">OPERATOR VIEW / EXAMPLE</span>
+                <span className="font-mono text-xs tracking-[0.16em] text-white/70">OPERATOR VIEW / EXAMPLE</span>
               </div>
 
               <div className="grid gap-px bg-white/10 sm:grid-cols-[1.08fr_0.92fr]">
                 <div className="bg-[#111210] p-5 sm:p-6">
                   <div className="mb-6 flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-white/45">Example generation</p>
+                      <p className="text-xs text-white/70">Example generation</p>
                       <p className="mt-1 text-2xl font-semibold tracking-tight">Active</p>
                     </div>
-                    <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">Illustrative</span>
+                    <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-emerald-300">Illustrative</span>
                   </div>
 
                   <div className="space-y-4">
                     {operationalSignals.map(([label, value, status], index) => (
                       <div key={label}>
                         <div className="mb-2 flex items-end justify-between gap-3">
-                          <span className="text-xs text-white/45">{label}</span>
+                          <span className="text-xs text-white/70">{label}</span>
                           <div className="text-right">
                             <span className="text-sm font-semibold">{value}</span>
-                            <span className="ml-2 text-[10px] text-emerald-300">{status}</span>
+                            <span className="ml-2 text-xs text-emerald-300">{status}</span>
                           </div>
                         </div>
                         <div aria-hidden="true" className="flex h-6 items-end gap-1 overflow-hidden">
@@ -202,7 +202,7 @@ export default function Home() {
                 </div>
 
                 <div className="bg-[#171816] p-5 sm:p-6">
-                  <div className="mb-6 flex items-center gap-2 text-xs text-white/45">
+                  <div className="mb-6 flex items-center gap-2 text-xs text-white/70">
                     <Graph aria-hidden="true" className="size-3.5" />
                     Request path
                   </div>
@@ -215,7 +215,7 @@ export default function Home() {
                     ].map(([title, label, color], index) => (
                       <div key={title}>
                         <div className="rounded-lg border border-white/10 bg-white/[0.04] p-3">
-                          <p className={`text-[10px] font-semibold uppercase tracking-wider ${color}`}>{label}</p>
+                          <p className={`text-xs font-semibold uppercase tracking-wider ${color}`}>{label}</p>
                           <p className="mt-1 text-sm font-medium">{title}</p>
                         </div>
                         {index < 3 && <div className="mx-auto h-2.5 w-px bg-white/15" />}
@@ -225,7 +225,7 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 text-[10px] text-white/35">
+              <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 text-xs text-white/70">
                 <span>Metrics · logs · traces · audit</span>
                 <span>Not live telemetry</span>
               </div>
@@ -302,32 +302,32 @@ export default function Home() {
                 <BrandMark />
                 <div>
                   <p className="text-sm font-semibold">{siteConfig.name} runtime architecture</p>
-                  <p className="text-[10px] text-muted-foreground">Data plane and control plane boundaries</p>
+                  <p className="text-xs text-muted-foreground">Data plane and control plane boundaries</p>
                 </div>
               </div>
-              <span className="hidden rounded-full border border-border px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:block">
+              <span className="hidden rounded-full border border-border px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground sm:block">
                 Active runtime generation
               </span>
             </div>
 
             <div className="p-4 sm:p-6 lg:p-8">
               <div className="mb-3 flex items-center gap-3">
-                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-muted-foreground">Data plane</span>
+                <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Data plane</span>
                 <span className="h-px flex-1 bg-border" />
-                <span className="text-[10px] text-muted-foreground">request → response</span>
+                <span className="text-xs text-muted-foreground">request → response</span>
               </div>
 
               <div className="grid gap-3 lg:grid-cols-[0.72fr_24px_2fr_24px_0.72fr] lg:items-stretch">
                 <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Downstream</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Downstream</p>
                   <div className="mt-4 space-y-2.5">
                     <div className="rounded-lg border border-sky-200 bg-sky-50 p-3 dark:border-sky-900 dark:bg-sky-950/35">
                       <p className="text-xs font-semibold text-sky-950 dark:text-sky-100">Native ingress</p>
-                      <p className="mt-1 text-[10px] leading-4 text-sky-800/70 dark:text-sky-300/70">HTTP/3 · QUIC · UDP</p>
+                      <p className="mt-1 text-xs leading-4 text-sky-800/70 dark:text-sky-300/70">HTTP/3 · QUIC · UDP</p>
                     </div>
                     <div className="rounded-lg border border-violet-200 bg-violet-50 p-3 dark:border-violet-900 dark:bg-violet-950/35">
                       <p className="text-xs font-semibold text-violet-950 dark:text-violet-100">Bootstrap ingress</p>
-                      <p className="mt-1 text-[10px] leading-4 text-violet-800/70 dark:text-violet-300/70">HTTP/1.1 or HTTP/2 · TCP/TLS</p>
+                      <p className="mt-1 text-xs leading-4 text-violet-800/70 dark:text-violet-300/70">HTTP/1.1 or HTTP/2 · TCP/TLS</p>
                     </div>
                   </div>
                 </div>
@@ -337,10 +337,10 @@ export default function Home() {
                 <div className="rounded-xl border border-border bg-card p-4 sm:p-5">
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div>
-                      <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Shared request path</p>
+                      <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Shared request path</p>
                       <p className="mt-1 text-sm font-semibold">One policy model for both ingress paths</p>
                     </div>
-                    <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">active</span>
+                    <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">active</span>
                   </div>
 
                   <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
@@ -355,14 +355,14 @@ export default function Home() {
                       ["08", "Dispatch", "bridge + transport"],
                     ].map(([step, title, detail]) => (
                       <div key={step} className="min-h-24 rounded-lg border border-border bg-muted/40 p-3">
-                        <p className="font-mono text-[9px] text-muted-foreground">{step}</p>
-                        <p className="mt-3 text-[11px] font-semibold leading-4">{title}</p>
-                        <p className="mt-1 text-[9px] leading-3.5 text-muted-foreground">{detail}</p>
+                        <p className="font-mono text-xs text-muted-foreground">{step}</p>
+                        <p className="mt-3 text-xs font-semibold leading-4">{title}</p>
+                        <p className="mt-1 text-xs leading-4 text-muted-foreground">{detail}</p>
                       </div>
                     ))}
                   </div>
 
-                  <div className="mt-3 rounded-lg border border-dashed border-border bg-muted/40 px-3 py-2.5 text-center text-[10px] text-muted-foreground">
+                  <div className="mt-3 rounded-lg border border-dashed border-border bg-muted/40 px-3 py-2.5 text-center text-xs text-muted-foreground">
                     Response normalization · streaming guardrails · outcome recording · backend feedback
                   </div>
                 </div>
@@ -370,15 +370,15 @@ export default function Home() {
                 <div className="hidden items-center justify-center text-lg text-muted-foreground/50 lg:flex">→</div>
 
                 <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Upstream</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Upstream</p>
                   <div className="mt-4 space-y-2.5">
                     <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 dark:border-emerald-900 dark:bg-emerald-950/35">
                       <p className="text-xs font-semibold text-emerald-950 dark:text-emerald-100">HTTPS backend</p>
-                      <p className="mt-1 text-[10px] leading-4 text-emerald-800/70 dark:text-emerald-300/70">HTTP/2 · TLS · optional mTLS</p>
+                      <p className="mt-1 text-xs leading-4 text-emerald-800/70 dark:text-emerald-300/70">HTTP/2 · TLS · optional mTLS</p>
                     </div>
                     <div className="rounded-lg border border-amber-200 bg-amber-50 p-3 dark:border-amber-900 dark:bg-amber-950/35">
                       <p className="text-xs font-semibold text-amber-950 dark:text-amber-100">HTTP backend</p>
-                      <p className="mt-1 text-[10px] leading-4 text-amber-800/70 dark:text-amber-300/70">HTTP/1.1 · connection pool</p>
+                      <p className="mt-1 text-xs leading-4 text-amber-800/70 dark:text-amber-300/70">HTTP/1.1 · connection pool</p>
                     </div>
                   </div>
                 </div>
@@ -386,25 +386,25 @@ export default function Home() {
 
               <div className="my-5 flex items-center gap-3">
                 <span className="h-px flex-1 border-t border-dashed border-border" />
-                <span className="text-[9px] font-semibold uppercase tracking-[0.14em] text-muted-foreground">shared state and feedback</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">shared state and feedback</span>
                 <span className="h-px flex-1 border-t border-dashed border-border" />
               </div>
 
               <div className="grid gap-3 md:grid-cols-3">
                 <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Runtime control</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Runtime control</p>
                   <p className="mt-2 text-sm font-semibold">Validated generations</p>
-                  <p className="mt-1.5 text-[11px] leading-5 text-muted-foreground">Validate · preview · activate · history · rollback</p>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Validate · preview · activate · history · rollback</p>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Backend lifecycle</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Backend lifecycle</p>
                   <p className="mt-2 text-sm font-semibold">Resolution, health, membership</p>
-                  <p className="mt-1.5 text-[11px] leading-5 text-muted-foreground">DNS refresh · active checks · passive feedback · client rotation</p>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">DNS refresh · active checks · passive feedback · client rotation</p>
                 </div>
                 <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground">Operator surfaces</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Operator surfaces</p>
                   <p className="mt-2 text-sm font-semibold">Explain every outcome</p>
-                  <p className="mt-1.5 text-[11px] leading-5 text-muted-foreground">Control API · metrics · logs · traces · audit · watchdog</p>
+                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Control API · metrics · logs · traces · audit · watchdog</p>
                 </div>
               </div>
             </div>
@@ -428,9 +428,9 @@ export default function Home() {
 
           <div className="mt-14 grid gap-5 lg:grid-cols-[1.05fr_0.95fr]">
             <div className="overflow-hidden rounded-2xl border border-border bg-[#111210] shadow-xl">
-              <div className="flex h-11 items-center justify-between border-b border-white/10 px-4 text-white/40">
+              <div className="flex h-11 items-center justify-between border-b border-white/10 px-4 text-white/70">
                 <div className="flex items-center gap-2 text-xs"><BracketsCurly aria-hidden="true" className="size-3.5" /> config.yaml</div>
-                <span className="text-[10px]">YAML</span>
+                <span className="text-xs">YAML</span>
               </div>
               <pre className="overflow-x-auto p-5 font-mono text-[12px] leading-6 text-white/75 sm:p-7 sm:text-[13px]">
                 <code>{configSnippet}</code>
@@ -446,7 +446,7 @@ export default function Home() {
                 </p>
                 <div className="mt-6 flex flex-wrap gap-2">
                   {["validate", "preview", "activate", "rollback"].map((item) => (
-                    <span key={item} className="rounded-md bg-muted px-2.5 py-1.5 font-mono text-[10px] text-muted-foreground">{item}</span>
+                    <span key={item} className="rounded-md bg-muted px-2.5 py-1.5 font-mono text-xs text-muted-foreground">{item}</span>
                   ))}
                 </div>
               </div>
@@ -471,7 +471,7 @@ export default function Home() {
       <section className="border-y border-white/10 bg-neutral-950 text-white dark:bg-neutral-900">
         <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 py-20 sm:px-8 sm:py-24 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/45">Deploy with intent</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70">Deploy with intent</p>
             <h2 className="mt-4 max-w-2xl text-balance text-4xl font-semibold tracking-tighter sm:text-5xl">
               Put {siteConfig.name} in front of an existing service.
             </h2>
