@@ -40,7 +40,7 @@ const capabilities = [
   },
   {
     icon: Pulse,
-    title: "Operator-grade signals",
+    title: "Correlated operator signals",
     description:
       "Correlate Prometheus metrics, structured logs, OpenTelemetry Protocol (OTLP) traces, audit events, and live runtime snapshots.",
   },
@@ -66,7 +66,7 @@ const operationalProblems = [
   {
     title: "Unsafe traffic changes",
     description:
-      "Routing and resilience updates need validation, controlled activation, and a dependable rollback path.",
+      "Routing and resilience updates need validation, controlled activation, and a retained rollback path.",
   },
   {
     title: "Fragmented operational signals",
@@ -100,10 +100,16 @@ export default function Home() {
       <section className="relative border-b border-border">
         <div className="relative mx-auto grid max-w-7xl gap-16 px-5 pb-20 pt-20 sm:px-8 sm:pb-28 sm:pt-28 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-20 lg:py-36">
           <div>
-            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs font-medium text-foreground/80 shadow-sm backdrop-blur">
+            <Link
+              href={siteConfig.links.status}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mb-7 inline-flex items-center gap-2 rounded-full border border-border bg-card/80 px-3 py-1.5 text-xs font-medium text-foreground/80 shadow-sm backdrop-blur transition-colors hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+            >
               <span className="size-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" />
-              Open source · {siteConfig.release}
-            </div>
+              Open source · {siteConfig.maturity} · Release status
+              <NewTabIndicator />
+            </Link>
 
             <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.065em] sm:text-6xl lg:text-[4.75rem]">
               Modern HTTP/3 ingress for the APIs you already run.
@@ -112,7 +118,7 @@ export default function Home() {
               {siteConfig.description}
             </p>
             <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">
-              {siteConfig.release} is intended for controlled production rollout.{" "}
+              This {siteConfig.maturity.toLowerCase()} release is intended for controlled production rollout.{" "}
               <Link
                 href={siteConfig.links.status}
                 target="_blank"
@@ -245,7 +251,7 @@ export default function Home() {
               The edge gets hardest when traffic stops being normal.
             </h2>
             <p className="mt-5 max-w-2xl text-lg leading-8 text-muted-foreground">
-              Basic forwarding is only the beginning. Under pressure, platform teams need every traffic decision and failure outcome to remain explicit.
+              Basic forwarding is only the beginning. Under pressure, platform teams need explicit routing, policy, and terminal outcomes.
             </p>
           </div>
 
@@ -268,7 +274,7 @@ export default function Home() {
               Traffic control that stays understandable under pressure.
             </h2>
             <p className="mt-5 text-lg leading-8 text-muted-foreground">
-              Every important edge decision is a first-class runtime concern—not an opaque side effect.
+              Routing, authentication, admission, quota, and backend outcomes use shared runtime and telemetry contracts.
             </p>
           </div>
 
@@ -406,7 +412,7 @@ export default function Home() {
                 </div>
                 <div className="rounded-xl border border-border bg-card p-4">
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Operator surfaces</p>
-                  <p className="mt-2 text-sm font-semibold">Explain every outcome</p>
+                  <p className="mt-2 text-sm font-semibold">Inspect request outcomes</p>
                   <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Control API · metrics · logs · traces · audit · watchdog</p>
                 </div>
               </div>
