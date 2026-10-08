@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
-import { NewTabIndicator } from "@/components/new-tab-indicator";
 import { SectionLabel } from "@/components/section-label";
 import { siteConfig } from "@/lib/site-config";
 import {
@@ -108,7 +107,6 @@ export default function Home() {
             >
               <span className="size-1.5 rounded-full bg-emerald-500 shadow-[0_0_0_4px_rgba(16,185,129,0.12)]" />
               Open source · {siteConfig.maturity} · Release status
-              <NewTabIndicator />
             </Link>
 
             <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.065em] sm:text-6xl lg:text-[4.75rem]">
@@ -126,7 +124,6 @@ export default function Home() {
                 className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
               >
                 Review status, general-availability blockers, and limitations
-                <NewTabIndicator />
               </Link>
               .
             </p>
@@ -140,7 +137,6 @@ export default function Home() {
               >
                 <BookOpen aria-hidden="true" className="size-4" />
                 Read the quickstart
-                <NewTabIndicator />
               </Link>
               <Link
                 href={siteConfig.links.github}
@@ -150,7 +146,6 @@ export default function Home() {
               >
                 <GithubLogo aria-hidden="true" className="size-4" weight="fill" />
                 View on GitHub
-                <NewTabIndicator />
               </Link>
             </div>
 
@@ -495,7 +490,7 @@ export default function Home() {
               rel="noopener noreferrer"
               className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Read the quickstart <NewTabIndicator />
+              Read the quickstart
             </Link>
             <Link
               href={siteConfig.links.github}
@@ -504,7 +499,6 @@ export default function Home() {
               className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-white/15 px-5 text-sm font-semibold transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
               <GithubLogo aria-hidden="true" className="size-4" weight="fill" /> View source
-              <NewTabIndicator />
             </Link>
           </div>
         </div>

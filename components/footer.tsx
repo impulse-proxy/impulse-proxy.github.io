@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { BrandMark } from "@/components/brand-mark";
-import { NewTabIndicator } from "@/components/new-tab-indicator";
 import { siteConfig } from "@/lib/site-config";
 
 const footerLinks = [
@@ -39,7 +38,6 @@ export function Footer() {
               className="rounded-sm hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
             >
               {label}
-              <NewTabIndicator />
             </Link>
           ))}
         </nav>
