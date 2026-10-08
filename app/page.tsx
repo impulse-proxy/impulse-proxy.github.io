@@ -46,9 +46,9 @@ const capabilities = [
 ];
 
 const operationalSignals = [
-  ["Request rate", "18.4k/s", "+8.2%"],
-  ["P99 edge latency", "6.8 ms", "healthy"],
-  ["Healthy backends", "12 / 12", "ready"],
+  ["Request traffic", "Rate + latency", "metrics"],
+  ["Backend state", "Health + load", "runtime"],
+  ["Policy outcomes", "Allow + reject", "audit"],
 ];
 
 const operationalProblems = [
@@ -91,7 +91,7 @@ upstream:
       path_prefix: /api
     backends:
       - id: api-1
-        address: 127.0.0.1:8001`;
+        address: http://127.0.0.1:8001`;
 
 export default function Home() {
   return (
@@ -152,17 +152,17 @@ export default function Home() {
                   <span className="size-2.5 rounded-full bg-white/20" />
                   <span className="size-2.5 rounded-full bg-white/20" />
                 </div>
-                <span className="font-mono text-[10px] tracking-[0.16em] text-white/40">RUNTIME / LIVE</span>
+                <span className="font-mono text-[10px] tracking-[0.16em] text-white/40">OPERATOR VIEW / EXAMPLE</span>
               </div>
 
               <div className="grid gap-px bg-white/10 sm:grid-cols-[1.08fr_0.92fr]">
                 <div className="bg-[#111210] p-5 sm:p-6">
                   <div className="mb-6 flex items-center justify-between">
                     <div>
-                      <p className="text-xs text-white/45">Active generation</p>
-                      <p className="mt-1 text-2xl font-semibold tracking-tight">#128</p>
+                      <p className="text-xs text-white/45">Example generation</p>
+                      <p className="mt-1 text-2xl font-semibold tracking-tight">Active</p>
                     </div>
-                    <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">Healthy</span>
+                    <span className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-emerald-300">Illustrative</span>
                   </div>
 
                   <div className="space-y-4">
@@ -214,8 +214,8 @@ export default function Home() {
               </div>
 
               <div className="flex items-center justify-between border-t border-white/10 px-5 py-3 text-[10px] text-white/35">
-                <span>4 upstream pools · 12 backends</span>
-                <span className="flex items-center gap-1.5"><span className="size-1.5 rounded-full bg-emerald-400" /> all systems nominal</span>
+                <span>Metrics · logs · traces · audit</span>
+                <span>Not live telemetry</span>
               </div>
             </div>
           </div>
