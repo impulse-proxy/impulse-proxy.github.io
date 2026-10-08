@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BrandMark } from "@/components/brand-mark";
 import { SectionLabel } from "@/components/section-label";
+import { buttonVariants } from "@/components/ui/button";
 import { siteConfig } from "@/lib/site-config";
 import {
   BookOpen, BracketsCurly, Check, Gauge, GearSix, GithubLogo, Globe, Graph, LockKey, Path, Pulse, ShieldCheck, Stack
@@ -133,7 +134,10 @@ export default function Home() {
                 href={siteConfig.links.quickstart}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-primary px-5 text-sm font-semibold text-primary-foreground shadow-[0_8px_24px_rgba(0,0,0,0.16)] transition hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className={buttonVariants({
+                  size: "cta",
+                  className: "shadow-[0_8px_24px_rgba(0,0,0,0.16)] hover:bg-primary/90",
+                })}
               >
                 <BookOpen aria-hidden="true" className="size-4" />
                 Read the quickstart
@@ -142,7 +146,11 @@ export default function Home() {
                 href={siteConfig.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-border bg-card px-5 text-sm font-semibold shadow-sm transition hover:bg-muted focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring"
+                className={buttonVariants({
+                  variant: "outline",
+                  size: "cta",
+                  className: "bg-card shadow-sm dark:border-border dark:bg-card dark:hover:bg-muted",
+                })}
               >
                 <GithubLogo aria-hidden="true" className="size-4" weight="fill" />
                 View on GitHub
@@ -488,7 +496,7 @@ export default function Home() {
               href={siteConfig.links.quickstart}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-lg bg-white px-5 text-sm font-semibold text-neutral-950 transition hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className={buttonVariants({ variant: "inverted", size: "cta" })}
             >
               Read the quickstart
             </Link>
@@ -496,7 +504,7 @@ export default function Home() {
               href={siteConfig.links.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-11 items-center justify-center gap-2 rounded-lg border border-white/15 px-5 text-sm font-semibold transition hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              className={buttonVariants({ variant: "inverted-outline", size: "cta" })}
             >
               <GithubLogo aria-hidden="true" className="size-4" weight="fill" /> View source
             </Link>
