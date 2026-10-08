@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Impulse Website
 
-## Getting Started
+This repository contains the public product website for
+[Impulse](https://github.com/impulse-proxy/impulse), an open-source HTTP/3 and
+QUIC edge runtime. The site introduces the product, communicates its current
+maturity, and directs readers to the documentation and source repository.
 
-First, run the development server:
+The canonical production origin is <https://impulse-proxy.github.io/>. Product
+documentation is published separately at <https://impulse-proxy.github.io/docs/>.
+
+## Repository Boundaries
+
+The Impulse project is split across three repositories:
+
+| Repository | Responsibility |
+| --- | --- |
+| [`impulse-proxy/website`](https://github.com/impulse-proxy/website) | Product homepage, positioning, navigation, and web metadata |
+| [`impulse-proxy/docs`](https://github.com/impulse-proxy/docs) | Installation, configuration, architecture, operations, and reference documentation |
+| [`impulse-proxy/impulse`](https://github.com/impulse-proxy/impulse) | Runtime source, tests, packaging, release notes, and contribution workflow |
+
+Keep detailed configuration contracts, operational procedures, and protocol
+support tables out of this repository. Summarize those topics here and link to
+their canonical documentation instead.
+
+## Content Authority
+
+Website copy must remain consistent with the following sources:
+
+| Subject | Authoritative source |
+| --- | --- |
+| Implemented runtime behavior | Current source and tests in `impulse-proxy/impulse` |
+| Configuration, Control API, metrics, and operational behavior | The corresponding reference page in `impulse-proxy/docs` |
+| Maturity, partial support, limitations, and GA blockers | [Status and Limitations](https://impulse-proxy.github.io/docs/reference/status-and-limitations) |
+| Released changes | [GitHub releases](https://github.com/impulse-proxy/impulse/releases) and the runtime changelog |
+| Website URLs, maturity label, and shared product description | [`lib/site-config.ts`](lib/site-config.ts) |
+
+The website is not an independent source of product behavior. Before adding or
+changing a technical claim, verify it against the runtime and its canonical
+documentation. Prefer precise capability descriptions over absolute marketing
+claims.
+
+## Local Environment
+
+The site uses Next.js, React, TypeScript, and Tailwind CSS. Development requires:
+
+- Node.js 20.9 or newer, as required by the checked-in Next.js version
+- npm, using the committed `package-lock.json`
+
+No environment variables are currently required for local development or the
+public page.
+
+Install the locked dependencies:
+
+```bash
+npm ci
+```
+
+Start the local development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The default local URL is <http://localhost:3000>.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Available verification commands are:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and self-host [DM Sans](https://fonts.google.com/specimen/DM+Sans).
+```bash
+npm run lint
+npm run build
+```
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+| Path | Purpose |
+| --- | --- |
+| `app/page.tsx` | Homepage content and product diagrams |
+| `app/layout.tsx` | Root layout and canonical social metadata |
+| `app/opengraph-image.tsx` | Generated social preview image |
+| `app/robots.ts` | Search-crawler policy |
+| `app/sitemap.ts` | Canonical sitemap entries |
+| `components/` | Shared page components |
+| `lib/site-config.ts` | Canonical website URL, maturity, description, and external links |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Updating Links, Maturity, and Claims
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Use these rules when product information changes:
 
-## Deploy on Vercel
+1. Update shared URLs, the maturity label, or the canonical product description
+   in `lib/site-config.ts`. This value also feeds page metadata, the sitemap,
+   `robots.txt`, and the social preview.
+2. Prefer version-neutral release and installation links. Link to the releases
+   page instead of embedding a release number in a URL.
+3. Update a maturity statement only after the canonical Status and Limitations
+   page changes. Keep the homepage qualifier and social preview consistent.
+4. Check every capability claim against the current runtime branch and the
+   corresponding documentation reference. State partial-support boundaries or
+   link directly to them.
+5. When a documentation route changes, update `lib/site-config.ts` and search
+   the whole repository for direct copies of the old route.
+6. Keep sample configuration aligned with the current schema and use clearly
+   local or placeholder values rather than production-looking credentials,
+   addresses, or telemetry.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Deployment
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The application metadata, sitemap, crawler policy, and documentation navigation
+all treat <https://impulse-proxy.github.io/> as the production website. The docs
+repository independently publishes the `/docs/` path.
+
+This repository does not currently contain a provider-specific deployment
+workflow. Publishing automation must preserve the canonical root URL and the
+separate `/docs/` ownership boundary. Do not assume Vercel deployment or add a
+provider-specific instruction here unless that workflow is committed to the
+repository.
+
+Before publishing a website change:
+
+- run the lint and production-build checks;
+- inspect internal and external links;
+- confirm the generated canonical, Open Graph, Twitter, sitemap, and robots
+  URLs use the production origin;
+- review technical claims against the current documentation and runtime; and
+- check keyboard navigation, focus visibility, contrast, and responsive layout.
+
+## Project Status and License
+
+Impulse is beta software intended for controlled production rollouts. Review
+[Status and Limitations](https://impulse-proxy.github.io/docs/reference/status-and-limitations)
+before presenting it as suitable for a deployment.
+
+The Impulse runtime is distributed under the
+[GNU General Public License v3.0](https://github.com/impulse-proxy/impulse/blob/master/LICENSE.md).
