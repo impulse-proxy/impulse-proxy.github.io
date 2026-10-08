@@ -7,6 +7,9 @@ export const siteConfig = {
     docs: "https://impulse-proxy.github.io/docs/",
     quickstart: "https://impulse-proxy.github.io/docs/getting-started/quickstart",
     status: "https://impulse-proxy.github.io/docs/reference/status-and-limitations",
+    security: "https://impulse-proxy.github.io/docs/concepts/security-model",
     github: "https://github.com/impulse-proxy/impulse",
+    releases: "https://github.com/impulse-proxy/impulse/releases",
+    license: "https://github.com/impulse-proxy/impulse/blob/master/LICENSE.md",
   },
 } as const;
