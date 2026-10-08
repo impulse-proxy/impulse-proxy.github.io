@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { siteConfig } from "@/lib/site-config";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -11,10 +12,41 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
+const title = "Impulse — HTTP/3 and QUIC edge runtime";
+const description = `${siteConfig.description} ${siteConfig.maturity} software for controlled production rollouts.`;
+
 export const metadata: Metadata = {
-  title: "Impulse",
-  description:
-    "Impulse is an HTTP/3 and QUIC edge runtime for routing, protecting, and observing critical API traffic.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: title,
+    template: "%s | Impulse",
+  },
+  description,
+  applicationName: siteConfig.name,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "/",
+    siteName: siteConfig.name,
+    title,
+    description,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Impulse, an HTTP/3 and QUIC edge runtime",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/opengraph-image"],
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
