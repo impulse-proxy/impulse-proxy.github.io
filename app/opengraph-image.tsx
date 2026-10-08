@@ -2,6 +2,8 @@ import { ImageResponse } from "next/og";
 
 import { siteConfig } from "@/lib/site-config";
 
+// Static exports require generated metadata images to be rendered at build time.
+export const dynamic = "force-static";
 export const alt = "Impulse, an HTTP/3 and QUIC edge runtime";
 export const size = {
   width: 1200,
