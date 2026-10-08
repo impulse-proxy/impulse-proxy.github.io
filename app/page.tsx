@@ -246,7 +246,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="problem" className="border-b border-border bg-background py-24 sm:py-32">
+      <section className="border-b border-border bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
             <SectionLabel>The operational problem</SectionLabel>
@@ -269,7 +269,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="capabilities" className="bg-muted/20 py-24 sm:py-32">
+      <section className="bg-muted/20 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-2xl">
             <SectionLabel>One runtime, explicit decisions</SectionLabel>
@@ -295,7 +295,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="architecture" className="border-y border-border bg-background py-24 sm:py-32">
+      <section className="border-y border-border bg-background py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
             <SectionLabel>Adopt without rewriting</SectionLabel>
@@ -424,7 +424,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="operations" className="bg-muted/20 py-24 sm:py-32">
+      <section className="bg-muted/20 py-24 sm:py-32">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-14 lg:grid-cols-2 lg:items-end">
             <div>
