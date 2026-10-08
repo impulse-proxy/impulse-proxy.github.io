@@ -95,7 +95,7 @@ upstream:
 
 export default function Home() {
   return (
-    <main className="flex-1 overflow-hidden">
+    <main id="main-content" tabIndex={-1} className="flex-1 overflow-hidden focus:outline-none">
       <section className="relative border-b border-border">
         <div className="relative mx-auto grid max-w-7xl gap-16 px-5 pb-20 pt-20 sm:px-8 sm:pb-28 sm:pt-28 lg:grid-cols-[1.02fr_0.98fr] lg:items-center lg:gap-20 lg:py-36">
           <div>
