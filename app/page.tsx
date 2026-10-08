@@ -197,8 +197,8 @@ export default function Home() {
                   <div className="space-y-2.5">
                     {[
                       ["HTTP/3 + QUIC", "Ingress", "text-sky-300"],
-                      ["Auth + Quota", "Policy", "text-violet-300"],
                       ["Route + Select", "Decision", "text-amber-300"],
+                      ["Auth + Admission", "Policy", "text-violet-300"],
                       ["HTTP/1.1 or H2", "Upstream", "text-emerald-300"],
                     ].map(([title, label, color], index) => (
                       <div key={title}>
@@ -331,14 +331,16 @@ export default function Home() {
                     <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wider text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">active</span>
                   </div>
 
-                  <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-6">
+                  <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
                     {[
                       ["01", "Intake", "canonical context"],
-                      ["02", "Admission", "quota + overload"],
-                      ["03", "Auth", "allow or deny"],
-                      ["04", "Route + LB", "select backend"],
-                      ["05", "Bridge", "build request"],
-                      ["06", "Transport", "execute H1/H2"],
+                      ["02", "Route", "resolve upstream"],
+                      ["03", "Select", "choose backend"],
+                      ["04", "Pre-auth", "brownout + rate limits"],
+                      ["05", "Local auth", "API key + JWT"],
+                      ["06", "External auth", "provider decision"],
+                      ["07", "Post-auth", "quota + protection"],
+                      ["08", "Dispatch", "bridge + transport"],
                     ].map(([step, title, detail]) => (
                       <div key={step} className="min-h-24 rounded-lg border border-border bg-muted/40 p-3">
                         <p className="font-mono text-[9px] text-muted-foreground">{step}</p>
