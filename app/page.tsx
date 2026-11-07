@@ -294,7 +294,7 @@ export default function Home() {
           </div>
 
           <div className="mt-6 rounded-xl border border-border bg-card p-5 text-sm leading-6 text-muted-foreground">
-            Authentication, connection and scoped rate limiting, quota, response caching, and compression are build-selected plugins. Compiled plugins run only when the active configuration requires them; startup or reload rejects configuration that requires a plugin absent from the binary.{" "}
+            Authentication, connection and scoped rate limiting, quota, bounded in-memory response caching, and gzip response compression are build-selected plugins. Compiled plugins run only when the active configuration requires them; startup or reload rejects configuration that requires a plugin absent from the binary.{" "}
             <Link
               href={siteConfig.links.pluginBuilds}
               target="_blank"
@@ -302,6 +302,15 @@ export default function Home() {
               className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
             >
               Review plugin build profiles
+            </Link>
+            . Plugins are compiled Rust capabilities, not runtime-loaded scripts or a WAF. Browser login and fleet management are outside the v0.7 scope. WebSocket and CONNECT support is partial and protocol-dependent.{" "}
+            <Link
+              href={siteConfig.links.status}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+            >
+              Review the feature and limitation matrix
             </Link>
             .
           </div>
