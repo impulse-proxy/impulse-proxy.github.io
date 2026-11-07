@@ -30,13 +30,13 @@ const capabilities = [
     icon: ShieldCheck,
     title: "Explicit resilience controls",
     description:
-      "Apply admission control, quotas, retries, hedging, circuit breakers, and bounded resource use where your traffic needs them.",
+      "Use core admission, retries, hedging, circuit breakers, and bounded resources, with build-selected quota and rate-limit plugins where needed.",
   },
   {
     icon: LockKey,
     title: "Explicit trust boundaries",
     description:
-      "Secure upstreams with mutual TLS (mTLS), protect requests with JSON Web Tokens (JWTs) or API keys, and operate through role-aware administration.",
+      "Secure upstreams with mutual TLS (mTLS), add build-selected request authentication, and operate through role-aware administration.",
   },
   {
     icon: Pulse,
@@ -291,6 +291,19 @@ export default function Home() {
                 <p className="mt-2.5 text-sm leading-6 text-muted-foreground">{description}</p>
               </article>
             ))}
+          </div>
+
+          <div className="mt-6 rounded-xl border border-border bg-card p-5 text-sm leading-6 text-muted-foreground">
+            Authentication, connection and scoped rate limiting, quota, response caching, and compression are build-selected plugins. Compiled plugins run only when the active configuration requires them; startup or reload rejects configuration that requires a plugin absent from the binary.{" "}
+            <Link
+              href={siteConfig.links.pluginBuilds}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-foreground focus-visible:rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
+            >
+              Review plugin build profiles
+            </Link>
+            .
           </div>
         </div>
       </section>
