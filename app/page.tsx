@@ -422,6 +422,15 @@ export default function Home() {
               <pre className="overflow-x-auto p-5 font-mono text-[12px] leading-6 text-white/75 sm:p-7 sm:text-[13px]">
                 <code>{configSnippet}</code>
               </pre>
+              <div className="border-t border-white/10 p-5 text-xs leading-5 text-white/60 sm:px-7">
+                <p>
+                  <code className="text-white/80">protocol: http3</code> is the current listener schema value. The listener group serves production Pingora HTTP/1.1 and HTTP/2 plus experimental HTTP/3.
+                </p>
+                <code className="mt-4 block overflow-x-auto rounded-lg bg-white/[0.06] px-3 py-2.5 text-white/80">
+                  curl --http1.1 --insecure https://localhost:9889/api
+                </code>
+                <p className="mt-3">Start with H1/H2; evaluate HTTP/3 separately as an optional experimental path.</p>
+              </div>
             </div>
 
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
