@@ -1,9 +1,11 @@
 # Impulse Website
 
 This repository contains the public product website for
-[Impulse](https://github.com/impulse-proxy/impulse), an open-source HTTP/3 and
-QUIC edge runtime. The site introduces the product, communicates its current
-maturity, and directs readers to the documentation and source repository.
+[Impulse](https://github.com/impulse-proxy/impulse), an open-source reverse
+proxy and edge runtime. Pingora HTTP/1.1 and HTTP/2 are the production ingress
+path, while HTTP/3 remains experimental. The site introduces the product,
+communicates its current maturity, and directs readers to the documentation and
+source repository.
 
 The canonical production origin is <https://impulse-proxy.github.io/>. Product
 documentation is published separately at <https://impulse-proxy.github.io/docs/>.

@@ -12,7 +12,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const title = "Impulse — HTTP/3 and QUIC edge runtime";
+const title = "Impulse — reverse proxy and edge runtime";
 const description = `${siteConfig.description} ${siteConfig.maturity} software for controlled production rollouts.`;
 
 export const metadata: Metadata = {

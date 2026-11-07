@@ -12,7 +12,7 @@ const capabilities = [
     icon: Globe,
     title: "Modern ingress",
     description:
-      "Terminate native HTTP/3 over QUIC, with HTTP/1.1 and HTTP/2 bootstrap ingress for broad client compatibility.",
+      "Serve production HTTP/1.1 and HTTP/2 through Pingora, with experimental HTTP/3 available for evaluation.",
   },
   {
     icon: Path,
@@ -111,7 +111,7 @@ export default function Home() {
             </Link>
 
             <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.065em] sm:text-6xl lg:text-[4.75rem]">
-              Modern HTTP/3 ingress for the APIs you already run.
+              A modern reverse proxy for the services you already run.
             </h1>
             <p className="mt-7 max-w-xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl">
               {siteConfig.description}
@@ -158,7 +158,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 flex flex-wrap gap-x-6 gap-y-3 text-sm text-muted-foreground">
-              {["HTTP/1.1 and HTTP/2 backends", "Self-hosted Linux runtime", "Native HTTP/3 over QUIC"].map((item) => (
+              {["Production HTTP/1.1 and HTTP/2 ingress", "Self-hosted Linux runtime", "Experimental HTTP/3"].map((item) => (
                 <span key={item} className="flex items-center gap-2">
                   <Check aria-hidden="true" className="size-3.5 text-foreground" />
                   {item}
@@ -220,7 +220,7 @@ export default function Home() {
                   </div>
                   <div className="space-y-2.5">
                     {[
-                      ["HTTP/3 + QUIC", "Ingress", "text-sky-300"],
+                      ["Pingora H1/H2 or experimental H3", "Ingress", "text-sky-300"],
                       ["Route + Select", "Decision", "text-amber-300"],
                       ["Authentication + Admission", "Policy", "text-violet-300"],
                       ["HTTP/1.1 or HTTP/2", "Upstream", "text-emerald-300"],
@@ -334,12 +334,12 @@ export default function Home() {
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Downstream</p>
                   <div className="mt-4 space-y-2.5">
                     <div className="rounded-lg border border-sky-200 bg-sky-50 p-3 dark:border-sky-900 dark:bg-sky-950/35">
-                      <p className="text-xs font-semibold text-sky-950 dark:text-sky-100">Native ingress</p>
-                      <p className="mt-1 text-xs leading-4 text-sky-800/70 dark:text-sky-300/70">HTTP/3 · QUIC · UDP</p>
+                      <p className="text-xs font-semibold text-sky-950 dark:text-sky-100">Production ingress</p>
+                      <p className="mt-1 text-xs leading-4 text-sky-800/70 dark:text-sky-300/70">Pingora · HTTP/1.1 or HTTP/2 · TCP/TLS</p>
                     </div>
                     <div className="rounded-lg border border-violet-200 bg-violet-50 p-3 dark:border-violet-900 dark:bg-violet-950/35">
-                      <p className="text-xs font-semibold text-violet-950 dark:text-violet-100">Bootstrap ingress</p>
-                      <p className="mt-1 text-xs leading-4 text-violet-800/70 dark:text-violet-300/70">HTTP/1.1 or HTTP/2 · TCP/TLS</p>
+                      <p className="text-xs font-semibold text-violet-950 dark:text-violet-100">Experimental ingress</p>
+                      <p className="mt-1 text-xs leading-4 text-violet-800/70 dark:text-violet-300/70">HTTP/3 · QUIC · UDP</p>
                     </div>
                   </div>
                 </div>
