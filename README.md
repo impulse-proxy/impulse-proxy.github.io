@@ -16,7 +16,7 @@ The Impulse project is split across three repositories:
 
 | Repository | Responsibility |
 | --- | --- |
-| [`impulse-proxy/website`](https://github.com/impulse-proxy/website) | Product homepage, positioning, navigation, and web metadata |
+| [`impulse-proxy/impulse-proxy.github.io`](https://github.com/impulse-proxy/impulse-proxy.github.io) | Product homepage, positioning, navigation, and web metadata |
 | [`impulse-proxy/docs`](https://github.com/impulse-proxy/docs) | Installation, configuration, architecture, operations, and reference documentation |
 | [`impulse-proxy/impulse`](https://github.com/impulse-proxy/impulse) | Runtime source, tests, packaging, release notes, and contribution workflow |
 
@@ -32,7 +32,7 @@ Website copy must remain consistent with the following sources:
 | --- | --- |
 | Implemented runtime behavior | Current source and tests in `impulse-proxy/impulse` |
 | Configuration, Control API, metrics, and operational behavior | The corresponding reference page in `impulse-proxy/docs` |
-| Maturity, partial support, limitations, and GA blockers | [Status and Limitations](https://impulse-proxy.github.io/docs/reference/status-and-limitations) |
+| Maturity, protocol support, and limitations | [Feature and Limitation Matrix](https://impulse-proxy.github.io/docs/reference/status-and-limitations) |
 | Released changes | [GitHub releases](https://github.com/impulse-proxy/impulse/releases) and the runtime changelog |
 | Website URLs, maturity label, and shared product description | [`lib/site-config.ts`](lib/site-config.ts) |
 
@@ -89,7 +89,7 @@ Use these rules when product information changes:
    in `lib/site-config.ts`. These values also feed page metadata and homepage copy.
 2. Prefer version-neutral release and installation links. Link to the releases
    page instead of embedding a release number in a URL.
-3. Update a maturity statement only after the canonical Status and Limitations
+3. Update a maturity statement only after the canonical Feature and Limitation Matrix
    page changes. Keep the homepage qualifier and page metadata consistent.
 4. Check every capability claim against the current runtime branch and the
    corresponding documentation reference. State partial-support boundaries or
@@ -103,7 +103,7 @@ Use these rules when product information changes:
 ## Project Status and License
 
 Impulse is Pre-GA software intended for controlled production rollout. Review
-[Status and Limitations](https://impulse-proxy.github.io/docs/reference/status-and-limitations)
+[Feature and Limitation Matrix](https://impulse-proxy.github.io/docs/reference/status-and-limitations)
 before presenting it as suitable for a deployment.
 
 The Impulse runtime is distributed under the

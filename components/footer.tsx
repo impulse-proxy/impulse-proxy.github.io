@@ -5,7 +5,10 @@ import { siteConfig } from "@/lib/site-config";
 
 const footerLinks = [
   { label: "Documentation", href: siteConfig.links.docs },
-  { label: "Status & limitations", href: siteConfig.links.status },
+  { label: "Feature and limitation matrix", href: siteConfig.links.status },
+  { label: "Architecture", href: siteConfig.links.architecture },
+  { label: "Plugin build profiles", href: siteConfig.links.pluginBuilds },
+  { label: "Production deployment", href: siteConfig.links.production },
   { label: "Releases", href: siteConfig.links.releases },
   { label: "Security model", href: siteConfig.links.security },
   { label: "Apache 2.0 license", href: siteConfig.links.license },
