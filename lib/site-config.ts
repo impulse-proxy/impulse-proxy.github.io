@@ -6,6 +6,7 @@ export const siteConfig = {
   maturity: "Pre-GA",
   links: {
     docs: "https://impulse-proxy.github.io/docs/",
+    architecture: "https://impulse-proxy.github.io/docs/architecture/overview",
     quickstart: "https://impulse-proxy.github.io/docs/getting-started/quickstart",
     status: "https://impulse-proxy.github.io/docs/reference/status-and-limitations",
     security: "https://impulse-proxy.github.io/docs/concepts/security-model",

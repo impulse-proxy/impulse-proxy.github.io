@@ -314,24 +314,23 @@ export default function Home() {
                 <BrandMark />
                 <div>
                   <p className="text-sm font-semibold">{siteConfig.name} runtime architecture</p>
-                  <p className="text-xs text-muted-foreground">Data plane and control plane boundaries</p>
+                  <p className="text-xs text-muted-foreground">Conceptual request flow</p>
                 </div>
               </div>
-              <span className="hidden rounded-full border border-border px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground sm:block">
-                Active runtime generation
-              </span>
+              <Link
+                href={siteConfig.links.architecture}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shrink-0 rounded-full border border-border px-2.5 py-1 text-xs font-semibold text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Architecture
+              </Link>
             </div>
 
             <div className="p-4 sm:p-6 lg:p-8">
-              <div className="mb-3 flex items-center gap-3">
-                <span className="text-xs font-bold uppercase tracking-[0.16em] text-muted-foreground">Data plane</span>
-                <span className="h-px flex-1 bg-border" />
-                <span className="text-xs text-muted-foreground">request → response</span>
-              </div>
-
-              <div className="grid gap-3 lg:grid-cols-[0.72fr_24px_2fr_24px_0.72fr] lg:items-stretch">
+              <div className="grid gap-3 lg:grid-cols-[1fr_24px_1.2fr_24px_1fr] lg:items-stretch">
                 <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Downstream</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Ingress adapters</p>
                   <div className="mt-4 space-y-2.5">
                     <div className="rounded-lg border border-sky-200 bg-sky-50 p-3 dark:border-sky-900 dark:bg-sky-950/35">
                       <p className="text-xs font-semibold text-sky-950 dark:text-sky-100">Production Pingora H1/H2 ingress</p>
@@ -347,42 +346,20 @@ export default function Home() {
                 <div className="hidden items-center justify-center text-lg text-muted-foreground/50 lg:flex">→</div>
 
                 <div className="rounded-xl border border-border bg-card p-4 sm:p-5">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <div>
-                      <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Shared request path</p>
-                      <p className="mt-1 text-sm font-semibold">One policy model for both ingress paths</p>
-                    </div>
-                    <span className="rounded-full bg-emerald-50 px-2.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-700 dark:bg-emerald-950/50 dark:text-emerald-300">active</span>
-                  </div>
-
-                  <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
-                    {[
-                      ["01", "Validate request", "canonical metadata"],
-                      ["02", "Resolve route", "host + path + method"],
-                      ["03", "Execute plugins", "compiled request plan"],
-                      ["04", "Core admission", "overload protection"],
-                      ["05", "Select backend", "eligible backend"],
-                      ["06", "Exchange + retry", "bridge + transport"],
-                      ["07", "Response policy", "shared processing"],
-                      ["08", "Record outcome", "exactly once"],
-                    ].map(([step, title, detail]) => (
-                      <div key={step} className="min-h-24 rounded-lg border border-border bg-muted/40 p-3">
-                        <p className="font-mono text-xs text-muted-foreground">{step}</p>
-                        <p className="mt-3 text-xs font-semibold leading-4">{title}</p>
-                        <p className="mt-1 text-xs leading-4 text-muted-foreground">{detail}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="mt-3 rounded-lg border border-dashed border-border bg-muted/40 px-3 py-2.5 text-center text-xs text-muted-foreground">
-                    Response normalization · streaming guardrails · outcome recording · backend feedback
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Shared edge service</p>
+                  <p className="mt-4 text-sm font-semibold">One request model across ingress protocols</p>
+                  <p className="mt-2 text-xs leading-5 text-muted-foreground">
+                    Protocol-neutral routing, compiled policy, backend selection, upstream execution, and request completion.
+                  </p>
+                  <div className="mt-4 rounded-lg border border-dashed border-border bg-muted/40 px-3 py-2.5 text-center text-xs text-muted-foreground">
+                    Pinned to one immutable runtime generation
                   </div>
                 </div>
 
                 <div className="hidden items-center justify-center text-lg text-muted-foreground/50 lg:flex">→</div>
 
                 <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Upstream</p>
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Upstream transport</p>
                   <div className="mt-4 space-y-2.5">
                     <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 dark:border-emerald-900 dark:bg-emerald-950/35">
                       <p className="text-xs font-semibold text-emerald-950 dark:text-emerald-100">HTTPS backend</p>
@@ -393,30 +370,6 @@ export default function Home() {
                       <p className="mt-1 text-xs leading-4 text-amber-800/70 dark:text-amber-300/70">HTTP/1.1 · connection pool</p>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="my-5 flex items-center gap-3">
-                <span className="h-px flex-1 border-t border-dashed border-border" />
-                <span className="text-xs font-semibold uppercase tracking-[0.14em] text-muted-foreground">shared state and feedback</span>
-                <span className="h-px flex-1 border-t border-dashed border-border" />
-              </div>
-
-              <div className="grid gap-3 md:grid-cols-3">
-                <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Runtime control</p>
-                  <p className="mt-2 text-sm font-semibold">Validated generations</p>
-                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Validate · preview · activate · history · rollback</p>
-                </div>
-                <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Backend lifecycle</p>
-                  <p className="mt-2 text-sm font-semibold">Resolution, health, membership</p>
-                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Domain Name System (DNS) refresh · active checks · passive feedback · client rotation</p>
-                </div>
-                <div className="rounded-xl border border-border bg-card p-4">
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Operator surfaces</p>
-                  <p className="mt-2 text-sm font-semibold">Inspect request outcomes</p>
-                  <p className="mt-1.5 text-xs leading-5 text-muted-foreground">Control API · metrics · logs · traces · audit · watchdog</p>
                 </div>
               </div>
             </div>
