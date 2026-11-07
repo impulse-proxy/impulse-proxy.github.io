@@ -117,7 +117,7 @@ export default function Home() {
               {siteConfig.description}
             </p>
             <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">
-              This {siteConfig.maturity.toLowerCase()} release is intended for controlled production rollout.{" "}
+              This {siteConfig.maturity} release is intended for controlled production rollout.{" "}
               <Link
                 href={siteConfig.links.status}
                 target="_blank"

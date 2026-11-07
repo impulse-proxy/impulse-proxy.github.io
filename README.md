@@ -102,7 +102,7 @@ Use these rules when product information changes:
 
 ## Project Status and License
 
-Impulse is beta software intended for controlled production rollouts. Review
+Impulse is Pre-GA software intended for controlled production rollout. Review
 [Status and Limitations](https://impulse-proxy.github.io/docs/reference/status-and-limitations)
 before presenting it as suitable for a deployment.
 

@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
 });
 
 const title = "Impulse — reverse proxy and edge runtime";
-const description = `${siteConfig.description} ${siteConfig.maturity} software for controlled production rollouts.`;
+const description = `${siteConfig.description} ${siteConfig.maturity} software intended for controlled production rollout.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

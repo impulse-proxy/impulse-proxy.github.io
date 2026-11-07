@@ -22,7 +22,7 @@ export function Footer() {
             <span className="font-semibold">{siteConfig.name}</span>
           </div>
           <p className="mt-2 text-xs">
-            Open source · {siteConfig.maturity} · Controlled production rollout
+            Open source · {siteConfig.maturity} · Intended for controlled production rollout
           </p>
         </div>
         <nav

@@ -3,7 +3,7 @@ export const siteConfig = {
   url: "https://impulse-proxy.github.io",
   description:
     "Impulse is an open-source reverse proxy and edge runtime with production HTTP/1.1 and HTTP/2 ingress through Pingora and experimental HTTP/3 support.",
-  maturity: "Beta",
+  maturity: "Pre-GA",
   links: {
     docs: "https://impulse-proxy.github.io/docs/",
     quickstart: "https://impulse-proxy.github.io/docs/getting-started/quickstart",
