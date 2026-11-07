@@ -334,12 +334,12 @@ export default function Home() {
                   <p className="text-xs font-bold uppercase tracking-[0.14em] text-muted-foreground">Downstream</p>
                   <div className="mt-4 space-y-2.5">
                     <div className="rounded-lg border border-sky-200 bg-sky-50 p-3 dark:border-sky-900 dark:bg-sky-950/35">
-                      <p className="text-xs font-semibold text-sky-950 dark:text-sky-100">Production ingress</p>
-                      <p className="mt-1 text-xs leading-4 text-sky-800/70 dark:text-sky-300/70">Pingora · HTTP/1.1 or HTTP/2 · TCP/TLS</p>
+                      <p className="text-xs font-semibold text-sky-950 dark:text-sky-100">Production Pingora H1/H2 ingress</p>
+                      <p className="mt-1 text-xs leading-4 text-sky-800/70 dark:text-sky-300/70">HTTP/1.1 or HTTP/2 · TCP/TLS</p>
                     </div>
                     <div className="rounded-lg border border-violet-200 bg-violet-50 p-3 dark:border-violet-900 dark:bg-violet-950/35">
-                      <p className="text-xs font-semibold text-violet-950 dark:text-violet-100">Experimental ingress</p>
-                      <p className="mt-1 text-xs leading-4 text-violet-800/70 dark:text-violet-300/70">HTTP/3 · QUIC · UDP</p>
+                      <p className="text-xs font-semibold text-violet-950 dark:text-violet-100">Experimental HTTP/3 ingress</p>
+                      <p className="mt-1 text-xs leading-4 text-violet-800/70 dark:text-violet-300/70">QUIC · UDP</p>
                     </div>
                   </div>
                 </div>
@@ -357,14 +357,14 @@ export default function Home() {
 
                   <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-4">
                     {[
-                      ["01", "Intake", "canonical context"],
-                      ["02", "Route", "resolve upstream"],
-                      ["03", "Select", "choose backend"],
-                      ["04", "Pre-auth", "brownout + rate limits"],
-                      ["05", "Local authentication", "API key + JWT"],
-                      ["06", "External authorization", "provider decision"],
-                      ["07", "Post-auth", "quota + protection"],
-                      ["08", "Dispatch", "bridge + transport"],
+                      ["01", "Validate request", "canonical metadata"],
+                      ["02", "Resolve route", "host + path + method"],
+                      ["03", "Execute plugins", "compiled request plan"],
+                      ["04", "Core admission", "overload protection"],
+                      ["05", "Select backend", "eligible backend"],
+                      ["06", "Exchange + retry", "bridge + transport"],
+                      ["07", "Response policy", "shared processing"],
+                      ["08", "Record outcome", "exactly once"],
                     ].map(([step, title, detail]) => (
                       <div key={step} className="min-h-24 rounded-lg border border-border bg-muted/40 p-3">
                         <p className="font-mono text-xs text-muted-foreground">{step}</p>
