@@ -440,9 +440,9 @@ export default function Home() {
 
               <div className="rounded-2xl border border-border bg-card p-7 shadow-sm">
                 <Stack aria-hidden="true" className="size-5" />
-                <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">An observability bundle</h3>
+                <h3 className="mt-5 text-xl font-semibold tracking-[-0.03em]">Operational signals</h3>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">
-                  Start with shipped dashboards, recording rules, alerts, and service-level objective (SLO) definitions aligned to the runtime vocabulary.
+                  Use stable Prometheus metrics, logs, optional OTLP traces, audit events, and runtime status in deployment-owned dashboards and alerts.
                 </p>
                 <div className="mt-6 flex items-center gap-3 text-xs text-muted-foreground">
                   <span>Prometheus</span><span className="size-1 rounded-full bg-muted-foreground/40" />
