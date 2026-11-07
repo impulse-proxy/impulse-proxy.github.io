@@ -107,4 +107,4 @@ Impulse is Pre-GA software intended for controlled production rollout. Review
 before presenting it as suitable for a deployment.
 
 The Impulse runtime is distributed under the
-[GNU General Public License v3.0](https://github.com/impulse-proxy/impulse/blob/master/LICENSE.md).
+[Apache License 2.0](https://github.com/impulse-proxy/impulse/blob/master/LICENSE.md).

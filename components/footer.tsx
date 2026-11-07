@@ -8,7 +8,7 @@ const footerLinks = [
   { label: "Status & limitations", href: siteConfig.links.status },
   { label: "Releases", href: siteConfig.links.releases },
   { label: "Security model", href: siteConfig.links.security },
-  { label: "GPLv3 license", href: siteConfig.links.license },
+  { label: "Apache 2.0 license", href: siteConfig.links.license },
   { label: "GitHub", href: siteConfig.links.github },
 ] as const;
 
