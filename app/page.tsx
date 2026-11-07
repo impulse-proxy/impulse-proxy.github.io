@@ -111,7 +111,7 @@ export default function Home() {
             </Link>
 
             <h1 className="max-w-3xl text-balance text-5xl font-semibold leading-[0.98] tracking-[-0.065em] sm:text-6xl lg:text-[4.75rem]">
-              A modern reverse proxy for the services you already run.
+              Control traffic without rewriting the services behind it.
             </h1>
             <p className="mt-7 max-w-xl text-pretty text-lg leading-8 text-muted-foreground sm:text-xl">
               {siteConfig.description}
